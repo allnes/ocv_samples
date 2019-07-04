@@ -18,10 +18,12 @@ int main(int argc, char** argv)
     string model  = string(argv[1]);
     string config = string(argv[2]);
     string path_image = string(argv[3]);
+    int backendId = DNN_BACKEND_OPENCV;
+    int targetId  = DNN_TARGET_CPU;
 
     Net net = readNet(model, config);
-    net.setPreferableBackend(DNN_BACKEND_OPENCV);
-    net.setPreferableTarget(DNN_TARGET_CPU);
+    net.setPreferableBackend(backendId);
+    net.setPreferableTarget(targetId);
 
     Mat frame = imread(path_image);
 
