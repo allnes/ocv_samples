@@ -15,21 +15,17 @@ int main(int argc, char** argv)
         return 0;
     }
 
-    // string model  = string(argv[1]);
-    // string config = string(argv[2]);
-    // Mat frame = imread(path_image), blob;
-    //
-    // Net net = readNet(model, config);
-    // blobFromImage(frame, blob, 0.017, Size(224, 224), {103.94,116.78,123.68});
-    // net.setInput(blob);
-    // Mat prob = net.forward();
-    //
-    // Point classIdPoint;
-    // double confidence;
-    // minMaxLoc(prob.reshape(1, 1), 0, &confidence, 0, &classIdPoint);
-    // int classId = classIdPoint.x;
-    // std::cout << "Class: " << classId << '\n';
-    // std::cout << "Confidence: " << confidence << '\n';
+    Mat frame;
 
+    string win_name = "Deep learning in OpenCV";
+    namedWindow(win_name, WINDOW_NORMAL);
+
+    VideoCapture cap;
+    cap.open(0);
+    while (waitKey(1) < 0)
+    {
+        cap >> frame;
+        imshow(win_name, frame);
+    }
     return 0;
 }
