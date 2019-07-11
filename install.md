@@ -5,6 +5,6 @@
 ```
 cd <путь до директории куда вы хотите собрать OpenCV>
 <путь до директории с установленным OpenVino>\bin\setupvars.bat
-cmake -DWITH_INF_ENGINE=ON -DCMAKE_BUILD_TYPE=RELEASE <путь до нужных исходников OpenCV>
+cmake -DWITH_INF_ENGINE=ON -DCMAKE_BUILD_TYPE=RELEASE -DENABLE_CXX11=ON <путь до нужных исходников OpenCV>
 cmake --build .  // сборка
 ```
